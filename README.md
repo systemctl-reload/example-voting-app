@@ -1,6 +1,6 @@
 # example-voting-app
 
-This is based on the original [example-voting-app](https://github.com/dockersamples/example-voting-app)
+This is based on the original [example-voting-app](https://github.com/dockersamples/example-voting-app) modified to work on my lab
 ```
 docker run -d --name=vote -p 5000:80 --link redis:redis voting-app
 ```
