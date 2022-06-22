@@ -23,7 +23,7 @@ docker run -d --name=result -p 5001:80 --link db:db result-app
 version: '3'
 services:
   vote:
-    image: voting-app
+    build: ./vote
     container_name: vote
     ports:
       - '5000:80'
@@ -38,13 +38,13 @@ services:
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
   worker:
-    image: worker-app
+    build: ./worker
     container_name: worker
     depends_on:
       - redis
       - db
   result:
-    image: result-app
+    build: ./result
     container_name: result
     ports:
       - 5001:80
